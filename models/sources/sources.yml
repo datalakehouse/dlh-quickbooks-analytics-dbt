@@ -1,0 +1,34 @@
+version: 2
+
+sources:      
+  - name: "{{ var('source_schema')}}"
+    database: "{{ var('source_database')}}"
+    schema: "{{ var('source_schema')}}"
+    quoting:
+      identifier: true
+    tables:
+      - name: ACCOUNT
+      - name: BILL
+      - name: BILL_LINE
+      - name: BILL_PAYMENT
+      - name: BILL_PAYMENT_LINE
+      - name: CURRENCY
+      - name: CUSTOMER
+      - name: DEPOSIT                  
+      - name: DEPOSIT_LINE
+      - name: EMPLOYEE
+      - name: ITEM
+      - name: JOURNAL_ENTRY
+      - name: JOURNAL_ENTRY_LINE
+      - name: PURCHASE
+      - name: PURCHASE_LINE
+      - name: VENDOR
+      - name: TERM
+      - name: BILL_LINKED_TXN
+      - name: INVOICE
+      - name: INVOICE_LINKED_TXN
+      - name: INVOICE_LINE  
+      - name: INVOICE_LINE_BUNDLE 
+      - name: CLASS 
+      - name: PAYMENT 
+      - name: PAYMENT_LINE
