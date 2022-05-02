@@ -12,14 +12,14 @@ WITH source AS (
     {{source(var('source_schema'),'PAYMENT')}}
 ),
 accounts AS (
-    SELECT * FROM {{ref('W_ACCOUNTS_D')}}
+    SELECT * FROM {{ref('W_QKB_ACCOUNTS_D')}}
 ),
 currency AS (
-    SELECT * FROM {{ref('W_CURRENCY_D')}}
+    SELECT * FROM {{ref('W_QKB_CURRENCY_D')}}
 ),
 
 customers AS (
-    SELECT * FROM {{ref('W_CUSTOMERS_D')}}
+    SELECT * FROM {{ref('W_QKB_CUSTOMERS_D')}}
 ),
 
 rename AS 

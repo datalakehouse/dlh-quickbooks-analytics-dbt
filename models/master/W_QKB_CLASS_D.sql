@@ -10,4 +10,4 @@
 SELECT
   *
 FROM
-  {{ref('V_CLASS_STG')}} AS C
+  {{ref('V_QKB_CLASS_STG')}} AS C

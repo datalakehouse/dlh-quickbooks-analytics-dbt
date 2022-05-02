@@ -12,17 +12,17 @@ WITH source AS (
     {{source(var('source_schema'),'INVOICE_LINE_BUNDLE')}}
 ),
 invoice_line AS (
-    SELECT * FROM {{ref('V_INVOICE_LINE_STG')}}
+    SELECT * FROM {{ref('V_QKB_INVOICE_LINE_STG')}}
 ),
 accounts AS (
-    SELECT * FROM {{ref('W_ACCOUNTS_D')}}
+    SELECT * FROM {{ref('W_QKB_ACCOUNTS_D')}}
 ),
 
 class AS (
-    SELECT * FROM {{ref('W_CLASS_D')}}
+    SELECT * FROM {{ref('W_QKB_CLASS_D')}}
 ),
 item AS (
-    SELECT * FROM {{ref('W_ITEMS_D')}}
+    SELECT * FROM {{ref('W_QKB_ITEMS_D')}}
 ),
 rename AS 
 (   

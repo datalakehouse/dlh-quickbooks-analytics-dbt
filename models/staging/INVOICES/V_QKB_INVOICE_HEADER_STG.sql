@@ -12,22 +12,22 @@ WITH source AS (
     {{source(var('source_schema'),'INVOICE')}}
 ),
 accounts AS (
-    SELECT * FROM {{ref('W_ACCOUNTS_D')}}
+    SELECT * FROM {{ref('W_QKB_ACCOUNTS_D')}}
 ),
 currency AS (
-    SELECT * FROM {{ref('W_CURRENCY_D')}}
+    SELECT * FROM {{ref('W_QKB_CURRENCY_D')}}
 ),
 class AS (
-    SELECT * FROM {{ref('W_CLASS_D')}}
+    SELECT * FROM {{ref('W_QKB_CLASS_D')}}
 ),
 customers AS (
-    SELECT * FROM {{ref('W_CUSTOMERS_D')}}
+    SELECT * FROM {{ref('W_QKB_CUSTOMERS_D')}}
 ),
 term AS (
-  SELECT  *  FROM  {{ref('W_TERM_D')}}
+  SELECT  *  FROM  {{ref('W_QKB_TERM_D')}}
 ),
 payments AS (
-  SELECT  *  FROM  {{ref('W_PAYMENTS_F')}}
+  SELECT  *  FROM  {{ref('W_QKB_PAYMENTS_F')}}
 ),
 invoice_linked AS (
   SELECT  *  FROM  {{source(var('source_schema'),'INVOICE_LINKED_TXN')}}

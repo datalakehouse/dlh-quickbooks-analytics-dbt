@@ -9,16 +9,16 @@ WITH source AS(
     SELECT * FROM  {{source(var('source_schema'),'BILL')}}
 ),
 term AS (
-  SELECT  *  FROM  {{ref('W_TERM_D')}}
+  SELECT  *  FROM  {{ref('W_QKB_TERM_D')}}
 ),
 vendors AS (
-    SELECT * FROM {{ref('W_VENDORS_D')}}
+    SELECT * FROM {{ref('W_QKB_VENDORS_D')}}
 ),
 accounts AS (
-    SELECT * FROM {{ref('W_ACCOUNTS_D')}}
+    SELECT * FROM {{ref('W_QKB_ACCOUNTS_D')}}
 ),
 currency AS (
-    SELECT * FROM {{ref('W_CURRENCY_D')}}
+    SELECT * FROM {{ref('W_QKB_CURRENCY_D')}}
 ),
 bills_linked AS (
     SELECT * FROM {{source(var('source_schema'),'BILL_LINKED_TXN')}}

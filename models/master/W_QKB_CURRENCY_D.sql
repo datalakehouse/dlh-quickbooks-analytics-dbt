@@ -10,4 +10,4 @@
 SELECT
   *
 FROM
-  {{ref('V_TERM_STG')}} AS C
+  {{ref('V_QKB_CURRENCY_STG')}} AS C

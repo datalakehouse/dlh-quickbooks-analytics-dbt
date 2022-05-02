@@ -10,15 +10,15 @@ WITH source AS(
 ),
 
 accounts AS (
-    SELECT * FROM {{ref('W_ACCOUNTS_D')}}
+    SELECT * FROM {{ref('W_QKB_ACCOUNTS_D')}}
 ),
 
 customers AS (
-    SELECT * FROM {{ref('W_CUSTOMERS_D')}}
+    SELECT * FROM {{ref('W_QKB_CUSTOMERS_D')}}
 ),
 
 items AS (
-    SELECT * FROM {{ref('W_ITEMS_D')}}
+    SELECT * FROM {{ref('W_QKB_ITEMS_D')}}
 ),
 
 rename AS (

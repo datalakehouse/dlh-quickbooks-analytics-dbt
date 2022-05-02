@@ -8,16 +8,16 @@
 
 WITH BILLS AS (
     SELECT *
-    FROM {{ref('V_BILL_HEADER_STG')}}
+    FROM {{ref('V_QKB_BILL_HEADER_STG')}}
 ),
 
 BILL_LINES AS (
     SELECT *
-    FROM {{ref('V_BILL_LINES_STG')}}
+    FROM {{ref('V_QKB_BILL_LINES_STG')}}
 ),
 ITEMS AS (
     SELECT *
-    FROM {{ref('W_ITEMS_D')}}
+    FROM {{ref('W_QKB_ITEMS_D')}}
 ),
 FINAL AS (
     SELECT

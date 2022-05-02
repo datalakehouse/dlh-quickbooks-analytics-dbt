@@ -8,12 +8,12 @@
 
 WITH PAYMENTS AS (
     SELECT *
-    FROM {{ref('V_PAYMENT_HEADER_STG')}}
+    FROM {{ref('V_QKB_PAYMENT_HEADER_STG')}}
 ),
 
 PAYMENT_LINES AS (
     SELECT *
-    FROM {{ref('V_PAYMENT_LINE_STG')}}
+    FROM {{ref('V_QKB_PAYMENT_LINE_STG')}}
 ),
 
 FINAL AS (

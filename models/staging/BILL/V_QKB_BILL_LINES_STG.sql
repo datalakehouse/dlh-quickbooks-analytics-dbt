@@ -9,13 +9,13 @@ WITH source AS(
     SELECT * FROM  {{source(var('source_schema'),'BILL_LINE')}}
 ),
 items AS (
-    SELECT * FROM {{ref('W_ITEMS_D')}}
+    SELECT * FROM {{ref('W_QKB_ITEMS_D')}}
 ),
 customers AS (
-    SELECT * FROM {{ref('W_CUSTOMERS_D')}}
+    SELECT * FROM {{ref('W_QKB_CUSTOMERS_D')}}
 ),
 accounts AS (
-    SELECT * FROM {{ref('W_ACCOUNTS_D')}}
+    SELECT * FROM {{ref('W_QKB_ACCOUNTS_D')}}
 ),
 rename AS (
 SELECT

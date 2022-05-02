@@ -15,7 +15,7 @@ source_term AS (
   SELECT 
   * 
   FROM  	
-    {{ref('W_TERM_D')}}
+    {{ref('W_QKB_TERM_D')}}
 ),
 rename AS 
 (   

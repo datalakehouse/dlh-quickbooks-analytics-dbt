@@ -8,16 +8,16 @@
 
 WITH PURCHASE AS (
     SELECT *
-    FROM {{ref('V_PURCHASE_HEADER_STG')}}
+    FROM {{ref('V_QKB_PURCHASE_HEADER_STG')}}
 ),
 
 PURCHASE_LINES AS (
     SELECT *
-    FROM {{ref('V_PURCHASE_LINE_STG')}}
+    FROM {{ref('V_QKB_PURCHASE_LINE_STG')}}
 ),
 ITEMS AS (
     SELECT *
-    FROM {{ref('W_ITEMS_D')}}
+    FROM {{ref('W_QKB_ITEMS_D')}}
 ),
 FINAL AS (
     SELECT

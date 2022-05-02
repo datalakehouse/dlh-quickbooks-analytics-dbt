@@ -10,4 +10,4 @@
 SELECT
   *
 FROM
-  {{ref('V_PAYMENTS_STG')}} AS C
+  {{ref('V_QKB_BILLS_STG')}} AS C

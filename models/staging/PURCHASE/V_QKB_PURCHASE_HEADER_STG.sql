@@ -9,19 +9,19 @@ WITH source AS(
     SELECT * FROM  {{source(var('source_schema'),'PURCHASE')}}
 ),
 vendors AS (
-    SELECT * FROM {{ref('W_VENDORS_D')}}
+    SELECT * FROM {{ref('W_QKB_VENDORS_D')}}
 ),
 accounts AS (
-    SELECT * FROM {{ref('W_ACCOUNTS_D')}}
+    SELECT * FROM {{ref('W_QKB_ACCOUNTS_D')}}
 ),
 currency AS (
-    SELECT * FROM {{ref('W_CURRENCY_D')}}
+    SELECT * FROM {{ref('W_QKB_CURRENCY_D')}}
 ),
 customers AS (
-    SELECT * FROM {{ref('W_CUSTOMERS_D')}}
+    SELECT * FROM {{ref('W_QKB_CUSTOMERS_D')}}
 ),
 employees AS (
-    SELECT * FROM {{ref('W_EMPLOYEES_D')}}
+    SELECT * FROM {{ref('W_QKB_EMPLOYEES_D')}}
 ),
 rename AS (
 SELECT
