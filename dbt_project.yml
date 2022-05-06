@@ -28,7 +28,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 vars:    
     source_database: DEVELOPER_SANDBOX
-    source_schema: DEMO_QUICKBOOKS
+    source_schema: DEMO_QUICKBOOKS_SANDBOX
     target_schema: QUICKBOOKS
 
 
