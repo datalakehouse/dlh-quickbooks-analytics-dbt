@@ -1,12 +1,12 @@
 {{ config (
   materialized= 'view',
-  schema=var('target_schema'),
+  schema=var('target_schema', 'QUICKBOOKS'),
   tags= ["staging", "daily"]
 )
 }}
 
 WITH source AS(
-    SELECT * FROM  {{source(var('source_schema'),'BILL')}}
+    SELECT * FROM  {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'BILL')}}
 ),
 term AS (
   SELECT  *  FROM  {{ref('W_QKB_TERM_D')}}
@@ -21,14 +21,14 @@ currency AS (
     SELECT * FROM {{ref('W_QKB_CURRENCY_D')}}
 ),
 bills_linked AS (
-    SELECT * FROM {{source(var('source_schema'),'BILL_LINKED_TXN')}}
+    SELECT * FROM {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'BILL_LINKED_TXN')}}
 ),
 bill_payment AS (
-    SELECT * FROM {{source(var('source_schema'),'BILL_PAYMENT')}}
+    SELECT * FROM {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'BILL_PAYMENT')}}
 ),
 bill_payment_lines as (
     select *
-    from {{source(var('source_schema'),'BILL_PAYMENT_LINE')}}
+    from {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'BILL_PAYMENT_LINE')}}
     where bill_id is not null
 ),
 bills_pay as

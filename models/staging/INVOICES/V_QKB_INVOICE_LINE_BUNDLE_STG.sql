@@ -1,6 +1,6 @@
 {{ config (
   materialized= 'view',
-  schema=var('target_schema'),
+  schema=var('target_schema', 'QUICKBOOKS'),
   tags= ["staging", "daily"]
 )
 }}
@@ -9,7 +9,7 @@ WITH source AS (
   SELECT 
   * 
   FROM  	
-    {{source(var('source_schema'),'INVOICE_LINE_BUNDLE')}}
+    {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'INVOICE_LINE_BUNDLE')}}
 ),
 invoice_line AS (
     SELECT * FROM {{ref('V_QKB_INVOICE_LINE_STG')}}

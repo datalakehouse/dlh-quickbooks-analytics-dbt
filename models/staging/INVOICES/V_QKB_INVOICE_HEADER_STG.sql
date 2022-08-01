@@ -1,6 +1,6 @@
 {{ config (
   materialized= 'view',
-  schema=var('target_schema'),
+  schema=var('target_schema', 'QUICKBOOKS'),
   tags= ["staging", "daily"]
 )
 }}
@@ -9,7 +9,7 @@ WITH source AS (
   SELECT 
   * 
   FROM  	
-    {{source(var('source_schema'),'INVOICE')}}
+    {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'INVOICE')}}
 ),
 accounts AS (
     SELECT * FROM {{ref('W_QKB_ACCOUNTS_D')}}
@@ -30,7 +30,7 @@ payments AS (
   SELECT  *  FROM  {{ref('W_QKB_PAYMENTS_F')}}
 ),
 invoice_linked AS (
-  SELECT  *  FROM  {{source(var('source_schema'),'INVOICE_LINKED_TXN')}}
+  SELECT  *  FROM  {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'INVOICE_LINKED_TXN')}}
 ),
 invoice_payment AS (
   SELECT 

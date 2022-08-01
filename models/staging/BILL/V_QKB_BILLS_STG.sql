@@ -1,7 +1,7 @@
 
 {{ config (
   materialized= 'view',
-  schema=var('target_schema'),
+  schema=var('target_schema', 'QUICKBOOKS'),
   tags= ["staging", "daily"]
 )
 }}

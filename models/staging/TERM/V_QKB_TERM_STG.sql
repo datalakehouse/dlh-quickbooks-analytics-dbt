@@ -1,13 +1,13 @@
 {{ config (
   materialized= 'view',
-  schema=var('target_schema'),
+  schema=var('target_schema', 'QUICKBOOKS'),
   tags= ["staging", "daily"]
 )
 }}
 
 WITH source as 
 (
-SELECT  *  FROM  {{source(var('source_schema'),'TERM')}}
+SELECT  *  FROM  {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'TERM')}}
 ),
 rename AS 
 (

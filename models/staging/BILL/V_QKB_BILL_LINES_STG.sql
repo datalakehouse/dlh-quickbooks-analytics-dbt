@@ -1,12 +1,12 @@
 {{ config (
   materialized= 'view',
-  schema=var('target_schema'),
+  schema=var('target_schema', 'QUICKBOOKS'),
   tags= ["staging", "daily"]
 )
 }}
 
 WITH source AS(
-    SELECT * FROM  {{source(var('source_schema'),'BILL_LINE')}}
+    SELECT * FROM  {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'BILL_LINE')}}
 ),
 items AS (
     SELECT * FROM {{ref('W_QKB_ITEMS_D')}}
