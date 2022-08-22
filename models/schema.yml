@@ -60,6 +60,12 @@ models:
           - unique
           - not_null
         description: DataLakeHouse key of the bill line
+
+      - name: K_BILL_DLHK        
+        tests:
+          - relationships:
+              to: ref('W_QKB_BILLS_HEADER_F')
+              field: K_BILL_DLHK 
     
       - name: K_ACCOUNT_DLHK        
         tests:
