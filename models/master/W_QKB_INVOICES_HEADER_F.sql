@@ -10,4 +10,4 @@
 SELECT
   *
 FROM
-  {{ref('V_QKB_INVOICES_HEADER_STG')}} AS C
+  {{ref('V_QKB_INVOICE_HEADER_STG')}} AS C
