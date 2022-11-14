@@ -29,21 +29,16 @@ term AS (
 payments AS (
   SELECT  *  FROM  {{ref('W_QKB_PAYMENTS_F')}}
 ),
-invoice_linked AS (
-  SELECT  *  FROM  {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'INVOICE_LINKED_TXN')}}
-),
 invoice_payment AS (
   SELECT 
-    IL.INVOICE_ID,
+    S.ID AS INVOICE_ID,
     SUM(P.M_AMOUNT) PAYMENT_AMOUNT,
     MAX(P.A_TRANSACTION_DATE) AS TRANSACTION_DATE,
     MAX(P.A_TRANSACTION_STATUS) AS TRANSACTION_STATUS
-  FROM 
-  invoice_linked IL
-  INNER JOIN source S on S.ID = IL.INVOICE_ID 
-  INNER JOIN payments P ON P.K_PAYMENT_BK = IL.PAYMENT_ID
-  GROUP BY 
-  IL.INVOICE_ID
+  FROM source S
+  INNER JOIN payments P 
+  ON P.K_INVOICE_BK = S.ID
+  GROUP BY S.ID
 ),
 rename AS 
 (   
