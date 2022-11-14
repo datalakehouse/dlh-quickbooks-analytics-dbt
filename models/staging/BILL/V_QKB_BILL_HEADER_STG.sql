@@ -20,9 +20,6 @@ accounts AS (
 currency AS (
     SELECT * FROM {{ref('W_QKB_CURRENCY_D')}}
 ),
-bills_linked AS (
-    SELECT * FROM {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'BILL_LINKED_TXN')}}
-),
 bill_payment AS (
     SELECT * FROM {{source(var('source_schema', 'DEMO_QUICKBOOKS_SANDBOX'),'BILL_PAYMENT')}}
 ),
@@ -40,10 +37,9 @@ bills_pay as
     ,SUM(COALESCE(bp.TOTAL_AMOUNT,0))::decimal(15,2) AS PAYMENT_AMOUNT
     ,SUM(COALESCE(bpl.AMOUNT,0))::decimal(15,2) AS PAYMENT_LINE_AMOUNT
     FROM
-    bills_linked bl
-    INNER JOIN source as b on b.ID = bl.BILL_ID
-    INNER JOIN bill_payment as bp on bp.ID = bl.BILL_PAYMENT_ID
-    LEFT JOIN bill_payment_lines bpl ON bpl.BILL_PAYMENT_ID = bp.ID AND bpl.BILL_ID = B.ID
+    source as b
+    LEFT JOIN bill_payment_lines as bpl ON bpl.BILL_ID = B.ID
+    LEFT JOIN bill_payment as bp on bp.ID = bpl.BILL_PAYMENT_ID
 GROUP BY 1
 ),
 rename AS (
