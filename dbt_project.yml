@@ -27,10 +27,10 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "target"
     - "dbt_packages"
 
-# vars:    
-#     source_database: DEVELOPER_SANDBOX
-#     source_schema: DEMO_QUICKBOOKS_SANDBOX
-#     target_schema: QUICKBOOKS
+vars:    
+    source_database: NISARG_DATABASE
+    source_schema: QADMQB_QUICKBOOKS
+    target_schema: QUICKBOOKS
 
 
 models:
