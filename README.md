@@ -2,7 +2,7 @@
 
 This dbt package:
 
-*   Contains a DBT dimensional model based on Quickbooks Online data from  [DataLakeHouse.io](https://www.datalakehouse.io/)  connector.
+*   Contains a DBT dimensional model based on QuickBooks Online (QBO) data from  [DataLakeHouse.io](https://www.datalakehouse.io/)  connector.
 *   The main use of this package is to provide a stable Snowflake dimensional model that will provide useful insights.
     
 
