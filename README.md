@@ -81,4 +81,4 @@ Additional contributions to this package are very welcome! Please create issues 
 
 
 *   Fork and :star: this repository :)
-*   Check it out and :star: [the datalakehouse core repository](https://github.com/datalakehouse/datalakehouse-core);
+*   Check it out and :star: [the datalakehouse.io core repository](https://github.com/datalakehouse/datalakehouse-core);
