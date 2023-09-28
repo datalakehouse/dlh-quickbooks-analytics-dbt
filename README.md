@@ -1,4 +1,4 @@
-# Quickbooks package
+# QuickBooks Online (QBO) package
 
 This dbt package:
 
