@@ -2,8 +2,8 @@
 
 This dbt package:
 
-*   Contains a DBT dimensional model based on Quickbooks data from  [DataLakeHouse.io](https://www.datalakehouse.io/)  connector.
-*   The main use of this package is to provide a stable snowflake dimensional model that will provide useful insights.
+*   Contains a DBT dimensional model based on Quickbooks Online data from  [DataLakeHouse.io](https://www.datalakehouse.io/)  connector.
+*   The main use of this package is to provide a stable Snowflake dimensional model that will provide useful insights.
     
 
 ### Models
@@ -55,7 +55,7 @@ packages:
 Configuration
 -------------
 
-By default, this package uses `DEVELOPER_SANDBOX` as the source database name and `DEMO_QUICKBOOKS` as schema name. If this is not the where your salesforce data is, change ther below [variables](https://docs.getdbt.com/docs/using-variables) configuration on your `dbt_project.yml`:
+By default, this package uses `DEVELOPER_SANDBOX` as the source database name and `DEMO_QUICKBOOKS` as schema name. If this is not the where your Salesforce data is, change ther below [variables](https://docs.getdbt.com/docs/using-variables) configuration on your `dbt_project.yml`:
 
 ```yaml
 # dbt_project.yml
@@ -81,4 +81,4 @@ Additional contributions to this package are very welcome! Please create issues 
 
 
 *   Fork and :star: this repository :)
-*   Check it out and :star: [the datalakehouse.io core repository](https://github.com/datalakehouse/datalakehouse-core);
+*   Check it out and :star: [the DataLakeHouse.io core repository](https://github.com/datalakehouse/datalakehouse-core);
